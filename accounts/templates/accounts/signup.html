@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+    <head>
+        <title>맛집 리뷰</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <!-- nav bar -->
+        {% block content %}
+        
+
+        <div class="signup" style="margin: 1rem 7rem;">
+
+            <h1>Sign up!</h1>
+
+            <form method="POST" action="{% url 'signup' %}">
+
+            {% csrf_token %}
+                Username
+                <br>
+                <input name="username" type="text" value="">
+                <br>
+                Password
+                <br>
+                <input name="password1" type="password" value="">
+                <br>
+                Confirm Password
+                <br>
+                <input name="password2" type="password" value="">
+                <br>
+                <br>
+                <input clasee="btn btn-primary" type="submit" value="Sign Up!">
+            </form>
+
+        </div>
+
+    {% endblock %}
+    </body>
+</html>
